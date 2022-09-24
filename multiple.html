@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Nihimá Nahasdzáán</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+<style>
+body {font-family: "Raleway", Arial, sans-serif}
+#photos img {
+	margin-bottom: 5px;
+	cursor: pointer;
+	opacity: 1;
+	}
+#photos img:hover{opacity: 0.8}
+
+.snippet-result-code {
+  height: 500px
+}
+
+#photos {
+  /* Prevent vertical gaps */
+  line-height: 0;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 5px;
+  -moz-column-count: 3;
+  -moz-column-gap: 5px;
+  column-count: 3;
+  column-gap: 5px;
+}
+
+#photos img {
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
+}
+
+@media (max-width: 1200px) {
+  #photos {
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
+  }
+}
+
+@media (max-width: 1000px) {
+  #photos {
+    -moz-column-count: 3;
+    -webkit-column-count: 3;
+    column-count: 3;
+  }
+}
+
+@media (max-width: 800px) {
+  #photos {
+    -moz-column-count: 2;
+    -webkit-column-count: 2;
+    column-count: 2;
+  }
+}
+
+@media (max-width: 400px) {
+  #photos {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1;
+  }
+}
+	
+	
+@media (min-width: 1600px) {
+	.w3-modal-content {
+		width: 1500px;
+	}
+}
+	
+</style>
+</head>
+<body>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1500px">
+
+<!-- Header -->
+<div class="w3-opacity w3-padding-64">
+<header class="w3-center w3-margin-bottom">
+  <h1><b>Nihimá Nahasdzáán</b></h1>
+  <h3><b>Art of Mother Earth Gallery</b></h3>
+  <p><b>A project that showcases the beauty of landscapes</b></p>
+  <a href="#about" class="w3-button w3-light-grey w3-margin-top w3-round w3-border">Learn more and contribute</a>
+</header>
+</div>
+	
+
+  <!-- Photo Grid -->
+  <div class="w3-row">
+		<section id="photos">
+		</section>
+  </div>
+  
+<!-- End Page Content -->
+</div>
+
+<!-- Footer / About Section -->
+<footer class="w3-light-grey w3-padding-64 w3-center w3-text-grey" id="about">
+  <h2>About</h2>
+	<p>Information about the project</p>
+	<h2>How to contribute to the gallery</h2>
+	<p>Instructions</p>
+	<img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Cc_by-nc_icon.svg" width="100px" height="auto">
+</footer>
+
+	
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+	<span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
+	<div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+		<img id="img01" class="w3-image">
+		<p id="caption"></p>
+	</div>
+</div>
+	
+</body>
+</html>
+
+
+<script src="./image_info.js"></script>
+
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+	
+function getRandomSize(min, max) {
+  return Math.round(Math.random() * (max - min) + min);
+}
+
+var allImages = "";
+console.log(imageInfo.length)
+for (var i = 0; i < imageInfo.length; i++) {
+  var file = imageInfo[i].file;
+  var title = imageInfo[i].title;
+	var note = imageInfo[i].note;
+	var credit = imageInfo[i].credit;
+	var alt = title + '<br>' + note + '<br>' + credit
+  allImages += '<img src="./images/' + file + '" alt="' + alt + '" onclick="onClick(this)">';
+}
+
+photos.innerHTML = allImages
+	
+	
+
+</script>
+
+
+
+
+
+
