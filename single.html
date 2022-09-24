@@ -92,7 +92,7 @@ body {font-family: "Raleway", Arial, sans-serif}
 </html>
 
 
-<script src="./image_info.js"></script>
+<script src="image_info.js"></script>
 
 <script>
 // Modal Image Gallery
@@ -115,7 +115,7 @@ for (var i = 0; i < imageInfo.length; i++) {
 	var note = imageInfo[i].note;
 	var credit = imageInfo[i].credit;
 	var alt = title + '<br>' + note + '<br>' + credit
-  allImages += '<img src="./images/' + file + '" alt="' + alt + '" onclick="onClick(this)">';
+  allImages += '<img src="images/' + file + '" alt="' + alt + '" onclick="onClick(this)">';
 }
 
 photos.innerHTML = allImages
