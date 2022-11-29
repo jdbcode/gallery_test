@@ -1,5 +1,23 @@
 var imageInfo = [
   {
+    file: 'earthart1.png',
+    title: 'earthart1',
+    note: 'This is earthart1 image - a DEM visualization - it is really neat.',
+    credit: 'JB'
+  },
+  {
+    file: 'earthart2.png',
+    title: 'earthart2',
+    note: 'This is earthart2 image - a DEM visualization - it is really neat.',
+    credit: 'JB'
+  },
+  {
+    file: 'earthart3.png',
+    title: 'earthart3',
+    note: 'This is earthart3 image - a DEM visualization - it is really neat.',
+    credit: 'JB'
+  },
+  {
     file: 'test1.png',
     title: 'Test1',
     note: 'This is test1 image - a DEM visualization - it is really neat.',
